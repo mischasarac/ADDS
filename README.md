@@ -1,2 +1,2 @@
 # ADDS
-Algorithm Design &amp; Data Structures Uni Course
+Algorithm Design & Data Structures Uni Course
