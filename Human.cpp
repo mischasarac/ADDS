@@ -10,7 +10,7 @@ char Human::makeMove(){
     std::cin >> move;
 
     // Making sure move is possible
-    if(move != 'R' || move != 'P' || move != 'S'){
+    if(!(move == 'R' || move == 'P' || move == 'S')){
         std::cout << "Please enter a valid move.";
 
         // if not, recursively calling function again to have a valid move
