@@ -2,7 +2,7 @@
 
 Computer::Computer(){
     Name = "Computer";
-    move = 'R';
+    move = 'R'; // Computer move will always be 'R'
 }
 
 char Computer::makeMove(){

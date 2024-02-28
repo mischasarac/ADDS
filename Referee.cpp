@@ -2,6 +2,7 @@
 #include <iostream>
 
 Referee::Referee(){
+    // Map each move to its losing correspondent
     interactions['R'] = 'P';
     interactions['P'] = 'S';
     interactions['S'] = 'R';
