@@ -7,6 +7,7 @@
 using namespace std;
 
 class Referee{
+    // Map to track which move loses against which.
     unordered_map<char,char> interactions;
 public:
     Referee();

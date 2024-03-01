@@ -1,4 +1,5 @@
 #include "Computer.h"
+#include "Player.h"
 
 Computer::Computer(){
     Name = "Computer";
@@ -8,3 +9,5 @@ Computer::Computer(){
 char Computer::makeMove(){
     return move;
 }
+
+std::string Computer::getName(){return Name;};

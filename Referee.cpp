@@ -1,4 +1,5 @@
 #include "Referee.h"
+#include "Player.h"
 #include <iostream>
 
 Referee::Referee(){
@@ -24,3 +25,4 @@ Player* Referee::refGame(Player* player1, Player* player2){
         return player2;
     }
 }
+

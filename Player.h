@@ -8,9 +8,7 @@ protected:
     std::string Name;
     char move;
 public:
-    Player();
-    Player(std::string Name);
-    std::string getName();
+    virtual std::string getName() = 0;
     virtual char makeMove() = 0;
 };
 

@@ -1,8 +1,12 @@
 #include "Human.h"
+#include "Player.h"
 #include <iostream>
 
-Human::Human() : Player::Player() {}
-Human::Human(std::string Name) : Player::Player(Name){} // Calling on same constructor as player
+Human::Human() {this->Name = "Human";}
+
+Human::Human(std::string Name) {this->Name = Name;} // Calling on same constructor as player
+
+
 char Human::makeMove(){
 
     // Taking in possible name
@@ -20,3 +24,5 @@ char Human::makeMove(){
     // Returning player's move
     return move;
 }
+
+std::string Human::getName(){return Name;};
