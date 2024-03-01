@@ -22,7 +22,7 @@ Player* Referee::refGame(Player* player1, Player* player2){
         return player2;
     } else {
         // cout << player1->getName() << " Wins" << endl;
-        return player2;
+        return player1;
     }
 }
 

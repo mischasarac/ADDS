@@ -10,4 +10,4 @@ char Computer::makeMove(){
     return move;
 }
 
-std::string Computer::getName(){return Name;};
+std::string Computer::getName(){return Name;}
