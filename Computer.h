@@ -1,5 +1,5 @@
-#ifndef REFEREE_H
-#define REFEREE_H
+#ifndef COMPUTER_H
+#define COMPUTER_H
 
 #include "Player.h"
 #include "Move.h"
@@ -11,14 +11,12 @@
 #include "Rock.h"
 #include "Scissors.h"
 #include "Zombie.h"
-#include "Associations.h"
-#include "Human.h"
-#include "Computer.h"
 
-class Referee{
+class Computer: public Player{
 public:
-    Player* refGame(Player* player1, Player* player2);
+    Computer();
+    std::string getName();
+    Move* makeMove();
 };
 
-
-#endif // REFEREE_H
+#endif // COMPUTER_H

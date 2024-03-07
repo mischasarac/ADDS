@@ -1,6 +1,3 @@
-#ifndef REFEREE_H
-#define REFEREE_H
-
 #include "Player.h"
 #include "Move.h"
 #include "Monkey.h"
@@ -14,11 +11,13 @@
 #include "Associations.h"
 #include "Human.h"
 #include "Computer.h"
+#include "Referee.h"
 
-class Referee{
-public:
-    Player* refGame(Player* player1, Player* player2);
-};
+int main(){
+    Human player("Joe");
+    Computer comp;
 
-
-#endif // REFEREE_H
+    Referee ref;
+    ref.refGame(&player, &comp);
+    return 0;
+}
