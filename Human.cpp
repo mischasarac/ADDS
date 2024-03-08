@@ -13,9 +13,10 @@ Move* Human::makeMove(){
     std::cout << "Make move: ";
     std::cin >> moveString;
 
+    // If string is not one of the available moves.
     if(matcher.matchString(moveString) == nullptr){
         std::cout << "Incorrect value entered: " << std::endl;
-
+        // recursively calling function.
         return makeMove(); 
     }
 

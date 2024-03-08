@@ -17,6 +17,7 @@ public:
     Computer();
     std::string getName();
     Move* makeMove();
+    ~Computer();
 };
 
 #endif // COMPUTER_H

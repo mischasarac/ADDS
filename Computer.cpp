@@ -3,6 +3,7 @@
 #include "Move.h"
 
 Computer::Computer(){
+    // Always picks rock
     move = new Rock;
     Name = "Computer";
 }
