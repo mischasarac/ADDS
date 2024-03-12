@@ -16,6 +16,7 @@
 
 class Player{
 protected:
+    // Important features of child classes
     std::string Name;
     Move* move;
 public:
