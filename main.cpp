@@ -1,4 +1,5 @@
 #include "Reverser.h"
+#include "Truckloads.h"
 
 #include <iostream>
 #include <string>
@@ -17,4 +18,8 @@ int main(){
 
     cout << r.reverseString(word) << endl;;
     cout << r.reverseDigit(num) << endl;
+
+
+    Truckloads truck;
+    cout << truck.numTrucks(1024,5) << endl;
 }
