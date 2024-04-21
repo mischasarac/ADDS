@@ -1,15 +1,26 @@
-#include "Sort.h"
+#include <bits/stdc++.h>
 #include "BubbleSort.h"
+#include "QuickSort.h"
 
+using namespace std;
 
-int main(){
-    BubbleSort sorter;
+int main() {
+  vector<int> list;
+  string line;
+  getline(cin, line);
+  stringstream ss(line);
+  int i;
+  while (ss >> i) {
+    list.push_back(i);
+  }
 
-    vector<int> list{2,4,1,8,5};
+  QuickSort qs;
+  vector<int> sorted = qs.sort(list);
+  
+  for (size_t i = 0; i < sorted.size(); i++) {
+    cout << sorted[i] << " ";
+  }
+  cout << endl;
 
-    list = sorter.sort(list);
-    
-    for(auto i:list){
-        cout << i << endl;
-    }
+  return 0;
 }
