@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
+
 #include "BubbleSort.h"
 #include "QuickSort.h"
+#include "RecursiveBinarySearch.h"
 
 using namespace std;
 
@@ -16,6 +18,10 @@ int main() {
 
   QuickSort qs;
   vector<int> sorted = qs.sort(list);
+
+  RecursiveBinarySearch rbs;
+  bool found = rbs.search(sorted, 1);
+  cout<< (found ? "true " : "false ");
   
   for (size_t i = 0; i < sorted.size(); i++) {
     cout << sorted[i] << " ";
