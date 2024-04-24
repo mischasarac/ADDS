@@ -12,4 +12,4 @@ public:
     bool search(vector<int> arr, int target);
 };
 
-#endif // RECURSIVEBINARYSEARCH_H
+#endif
