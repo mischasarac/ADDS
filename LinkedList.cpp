@@ -1,4 +1,5 @@
 #include "LinkedList.h"
+#include <limits>
 
 LinkedList::LinkedList(){
     this->head = nullptr;
@@ -18,26 +19,30 @@ LinkedList::LinkedList(int* array, int len){
 
 void LinkedList::insertPosition(int pos, int newNum){
     Node* insertion = head;
-    // setting first position
-    if(pos <= 1){
-        head->setLink(new Node(newNum, head->getLink()));
-    } else if(pos > length){
-        Node* temp = head->getLink();
-        while(temp->getLink() != nullptr){
-            temp = temp->getLink();
-        }
 
-        temp->setLink(new Node(newNum, nullptr));
-    }
-
-
-    // Otherwise:
-    for(int i = 0; i < pos-1; i++){
+    while(insertion != nullptr){
+        cout << insertion->getData() << endl;
         insertion = insertion->getLink();
     }
 
-    Node* temp = new Node(newNum, insertion->getLink());
-    insertion->setLink(temp);
+    insertion = head;
+    // setting first position
+    if(pos <= 1){
+        head = new Node(newNum, head);
+        return;
+    } 
+
+    // Otherwise:
+    for(int i = 0; i < pos-2; i++){
+        if(insertion->getLink() == nullptr){
+            insertion->setLink(new Node(newNum, nullptr));
+            return;
+        }
+
+        insertion = insertion->getLink();
+    }
+
+    insertion->setLink(new Node(newNum, insertion->getLink()));
 
 }
 
@@ -71,9 +76,13 @@ bool LinkedList::deletePosition(int pos){
 
 
 int LinkedList::get(int pos){
+
+    if(pos < 1){return std::numeric_limits<int>::max();}
+
     Node* temp = head;
 
-    for(int i = 0; i < pos; i++){
+    for(int i = 0; i < pos-1; i++){
+        if(temp->getLink() == nullptr){return std::numeric_limits<int>::max();}
         temp = temp->getLink();
     }
 
@@ -82,9 +91,12 @@ int LinkedList::get(int pos){
 
 
 int LinkedList::search(int target){
-    Node* temp = head->getLink();
-    for(int i = 0; i < length-1; i++){
-        if(temp->getData() == target){return i;}
+    Node* temp = head;
+    int count = 1;
+    while(temp != nullptr){
+        if(temp->getData() == target){return count;}
+        temp = temp->getLink();
+        count++;
     }
 
     return -1;
