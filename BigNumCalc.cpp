@@ -48,7 +48,7 @@ list<int> BigNumCalc::sub(list<int> num1, list<int> num2){
     while(!num1.empty() || !num2.empty()){
         val1 = 0;
         val2 = 0;
-        
+
         if(!num1.empty()){
             val1 = num1.back();
             num1.pop_back();
@@ -103,7 +103,8 @@ list<int> BigNumCalc::mul(list<int> num1, list<int> num2){
             currRes.push_front(carry);
         }
 
-        for(int i = 0; i < num2.size(); i++){
+
+        for(auto i = num2.begin(); i != num2.end(); i++){
             currRes.push_back(0);
         }
 
