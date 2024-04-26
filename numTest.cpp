@@ -1,7 +1,7 @@
 #include "BigNumCalc.h"
 
 int main(){
-    BigNumCalc a;
+    bigNumCalc a;
 
     list<int> num1 = a.buildBigNum("1000000000000000000000000");
     list<int> num2 = a.buildBigNum("20000");
