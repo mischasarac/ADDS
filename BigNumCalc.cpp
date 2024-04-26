@@ -1,7 +1,7 @@
 #include "BigNumCalc.h"
 
-list<int> BigNumCalc::buildBigNum(string numString){
-    list<int> res;
+std::list<int> BigNumCalc::buildBigNum(std::string numString){
+    std::list<int> res;
 
     for(auto i:numString){
         res.push_back((int)(i-'0'));
@@ -10,8 +10,8 @@ list<int> BigNumCalc::buildBigNum(string numString){
     return res;
 }
 
-list<int> BigNumCalc::add(list<int> num1, list<int> num2){
-    list<int> res;
+std::list<int> BigNumCalc::add(std::list<int> num1, std::list<int> num2){
+    std::list<int> res;
 
     int carry = 0;
     int val1, val2, sum;
@@ -39,8 +39,8 @@ list<int> BigNumCalc::add(list<int> num1, list<int> num2){
 }
 
 
-list<int> BigNumCalc::sub(list<int> num1, list<int> num2){
-    list<int> res;
+std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2){
+    std::list<int> res;
 
     int carry = 0;
     int val1, val2, subtract;
@@ -74,14 +74,14 @@ list<int> BigNumCalc::sub(list<int> num1, list<int> num2){
 }
 
 
-list<int> BigNumCalc::mul(list<int> num1, list<int> num2){
-    list<int> res = buildBigNum("0");
-    list<int> copy;
+std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2){
+    std::list<int> res = buildBigNum("0");
+    std::list<int> copy;
     int carry = 0;
     int dig1, dig2, product;
     while(!num2.empty()){
 
-        list<int> currRes;
+        std::list<int> currRes;
         carry = 0;
         copy = num1;
         dig2 = num2.front();

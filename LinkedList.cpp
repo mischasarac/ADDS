@@ -21,7 +21,6 @@ void LinkedList::insertPosition(int pos, int newNum){
     Node* insertion = head;
 
     while(insertion != nullptr){
-        cout << insertion->getData() << endl;
         insertion = insertion->getLink();
     }
 
@@ -108,13 +107,13 @@ void LinkedList::printList(){
     Node* temp = head;
     if(temp == nullptr){return;}
 
-    cout << '[';
+    std::cout << '[';
     while(temp->getLink() != nullptr){
-        cout << temp->getData() << " ";
+        std::cout << temp->getData() << " ";
         temp = temp->getLink();
     }
 
-    cout << temp->getData() << ']' << endl;
+    std::cout << temp->getData() << ']' << std::endl;
     return;
 }
 
