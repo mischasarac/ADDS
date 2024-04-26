@@ -9,7 +9,7 @@
 using namespace std;
 
 
-class BigNumCalc {
+class bigNumCalc {
 public:
     list<int> buildBigNum(string numString);
 

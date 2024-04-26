@@ -1,6 +1,6 @@
 #include "BigNumCalc.h"
 
-list<int> BigNumCalc::buildBigNum(string numString){
+list<int> bigNumCalc::buildBigNum(string numString){
     list<int> res;
 
     for(auto i:numString){
@@ -10,7 +10,7 @@ list<int> BigNumCalc::buildBigNum(string numString){
     return res;
 }
 
-list<int> BigNumCalc::add(list<int> num1, list<int> num2){
+list<int> bigNumCalc::add(list<int> num1, list<int> num2){
     list<int> res;
 
     int carry = 0;
@@ -39,7 +39,7 @@ list<int> BigNumCalc::add(list<int> num1, list<int> num2){
 }
 
 
-list<int> BigNumCalc::sub(list<int> num1, list<int> num2){
+list<int> bigNumCalc::sub(list<int> num1, list<int> num2){
     list<int> res;
 
     int carry = 0;
@@ -74,7 +74,7 @@ list<int> BigNumCalc::sub(list<int> num1, list<int> num2){
 }
 
 
-list<int> BigNumCalc::mul(list<int> num1, list<int> num2){
+list<int> bigNumCalc::mul(list<int> num1, list<int> num2){
     list<int> res = buildBigNum("0");
     list<int> copy;
     int carry = 0;
