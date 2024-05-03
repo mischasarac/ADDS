@@ -35,7 +35,7 @@ void LinkedList::printList() {
 /////////// your code goes here... DO NOT change the function signatures ///////////
 
 bool LinkedList::swap(int pos1, int pos2) {
-    if(pos2>pos1){
+    if(pos2<pos1){
         return swap(pos2,pos1);
     }
     if(pos1 < 0){
@@ -80,6 +80,7 @@ bool LinkedList::find_and_delete(int target) {
         if(temp->data == target){
             prev->link = temp->link;
             delete temp;
+            return true;
         }
 
         prev = temp;
@@ -87,4 +88,6 @@ bool LinkedList::find_and_delete(int target) {
 
 
     }
+
+    return false;
 }
