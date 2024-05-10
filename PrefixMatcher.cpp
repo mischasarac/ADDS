@@ -29,7 +29,6 @@ void PrefixMatcher::insert(string address, int routerNumber){
     trieNode* temp = head;
     for(auto i : address){
         if(temp->children[i-'0'] == nullptr){
-            std::cout << "adding: " << i << std::endl;
             temp->children[i-'0'] = new trieNode(i,false);
             temp = temp->children[i-'0'];
         } else {
