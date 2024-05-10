@@ -15,6 +15,9 @@ int PrefixMatcher::selectRouter(string networkAddress){
             temp = temp->children[i-'0'];
         }
     }
+
+    
+    return temp->number;
 }
 
 
@@ -32,6 +35,7 @@ void PrefixMatcher::insert(string address, int routerNumber){
         } else {
             temp = temp->children[i-'0'];
         }
+
     }
 
     temp->number = routerNumber;
