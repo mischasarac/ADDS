@@ -6,7 +6,7 @@ Autocomplete::Autocomplete(){
     head = nullptr;
 }
 
-void Autocomplete::insert(string word){
+void Autocomplete::insert(std::string word){
     if(head == nullptr){
         head = new trieNode();
     }
@@ -25,8 +25,8 @@ void Autocomplete::insert(string word){
 
     
 }
-vector<string> Autocomplete::getSuggestion(string partialWord){
-    vector<string> ans;
+vector<std::string> Autocomplete::getSuggestion(std::string partialWord){
+    vector<std::string> ans;
 
     trieNode* temp = head;
     for(auto i : partialWord){
@@ -38,12 +38,12 @@ vector<string> Autocomplete::getSuggestion(string partialWord){
     }
 
     // searching for all children
-    string currWord = partialWord;
-    queue<pair<trieNode*, string>> q;
+    std::string currWord = partialWord;
+    queue<pair<trieNode*, std::string>> q;
     q.push({temp, currWord});
 
     while(!q.empty()){
-        pair<trieNode*, string> curr = q.front();
+        pair<trieNode*, std::string> curr = q.front();
         q.pop();
 
         if(curr.first->isLeaf == true){ // if the word is a leaf

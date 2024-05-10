@@ -7,15 +7,15 @@
 
 #include "trie.h"
 
-using namespace std;
+// using namespace std;
 
 class Autocomplete{
     trieNode* head;
 public:
     Autocomplete();
 
-    void insert(string word);
-    vector<string> getSuggestion(string partialWord);
+    void insert(std::string word);
+    vector<std::string> getSuggestion(std::string partialWord);
 };
 
 
