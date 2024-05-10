@@ -14,7 +14,6 @@ void Autocomplete::insert(string word){
     trieNode* temp = head;
     for(auto i : word){
         if(temp->children[i-'a'] == nullptr){
-            std::cout << "adding: " << i << std::endl;
             temp->children[i-'a'] = new trieNode(i,false);
             temp = temp->children[i-'a'];
         } else {
@@ -48,7 +47,6 @@ vector<string> Autocomplete::getSuggestion(string partialWord){
         q.pop();
 
         if(curr.first->isLeaf == true){ // if the word is a leaf
-            std::cout << "letter: " << curr.first->data << " is apparently a leaf" << std::endl;
             ans.push_back(curr.second); // appending word at this point
         }
 
