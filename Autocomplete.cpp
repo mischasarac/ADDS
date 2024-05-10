@@ -1,0 +1,64 @@
+#include "Autocomplete.h"
+#include <queue>
+
+
+Autocomplete::Autocomplete(){
+    head = nullptr;
+}
+
+void Autocomplete::insert(string word){
+    if(head == nullptr){
+        head = new trieNode();
+    }
+
+    trieNode* temp = head;
+    for(auto i : word){
+        if(temp->children[i-'a'] == nullptr){
+            std::cout << "adding: " << i << std::endl;
+            temp->children[i-'a'] = new trieNode(i,false);
+            temp = temp->children[i-'a'];
+        } else {
+            temp = temp->children[i-'a'];
+        }
+    }
+
+    temp->isLeaf = true;
+
+    
+}
+vector<string> Autocomplete::getSuggestion(string partialWord){
+    vector<string> ans;
+
+    trieNode* temp = head;
+    for(auto i : partialWord){
+        if(temp->children[i-'a'] == nullptr){
+            return {};
+        } else {
+            temp = temp->children[i-'a'];
+        }
+    }
+
+    // searching for all children
+    string currWord = partialWord;
+    queue<pair<trieNode*, string>> q;
+    q.push({temp, currWord});
+
+    while(!q.empty()){
+        pair<trieNode*, string> curr = q.front();
+        q.pop();
+
+        if(curr.first->isLeaf == true){ // if the word is a leaf
+            std::cout << "letter: " << curr.first->data << " is apparently a leaf" << std::endl;
+            ans.push_back(curr.second); // appending word at this point
+        }
+
+        for(int i=0; i<26; i++){
+            if(curr.first->children[i] != nullptr){
+                q.push({curr.first->children[i], curr.second + (char)(i+'a')}); //(char)(i+'a') should append the letter onto this string
+            }
+        }
+    }
+
+
+    return ans;
+}
