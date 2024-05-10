@@ -16,7 +16,7 @@ int main(){
     a.insert("helpfulness");
     a.insert("horny");
 
-    vector<std::string> balls = a.getSuggestion("help");
+    vector<std::string> balls = a.getSuggestions("help");
 
     for(auto i : balls){
         std::cout << i << std::endl;

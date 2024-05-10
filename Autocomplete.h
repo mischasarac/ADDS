@@ -15,7 +15,7 @@ public:
     Autocomplete();
 
     void insert(std::string word);
-    vector<std::string> getSuggestion(std::string partialWord);
+    vector<std::string> getSuggestions(std::string partialWord);
 };
 
 

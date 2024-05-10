@@ -25,7 +25,7 @@ void Autocomplete::insert(std::string word){
 
     
 }
-vector<std::string> Autocomplete::getSuggestion(std::string partialWord){
+vector<std::string> Autocomplete::getSuggestions(std::string partialWord){
     vector<std::string> ans;
 
     trieNode* temp = head;
