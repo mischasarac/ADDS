@@ -13,7 +13,6 @@ void DocumentManager::addPatron(int patronID){
 
 int DocumentManager::search(string name){
     return document_names[name];
-
 } // returns docid if name is in the document collection or 0 if the name is not in the collection
 
 bool DocumentManager::borrowDocument(int docid, int patronID){
